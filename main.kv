@@ -29,9 +29,9 @@
             on_press: root.quit()
 
     GridLayout:
-        size_hint: .8,.1
+        size_hint: .8,.15
         pos_hint: {"top":.7,"right":.83}
-        rows: 2
+        rows: 3
         cols: 2
         Label:
             text:
@@ -48,6 +48,13 @@
             id: passsword
             multiline: False
             password: True
+        Label:
+            text:
+                "Path"
+
+        TextInput:
+            id: pathh
+            multiline: False
 
 <MainScreen>:
     name: "_login_screen_"

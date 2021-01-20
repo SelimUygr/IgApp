@@ -33,10 +33,11 @@ class LoginScreen(Screen):
     def login(self):
         self.username = self.ids.ussername.text
         self.password = self.ids.passsword.text
+        self.path = self.ids.pathh.text
         #Change page first
         sm.current = "_main_screen_"
         # Starting and setting everything to sign in an go home page of instagram
-        new_starting = starting(self.username,self.password)
+        new_starting = starting(self.username,self.password,self.path)
         global driver
         driver = new_starting.driver
         new_starting.open_Ig()

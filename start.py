@@ -11,13 +11,13 @@ path = Path(os.path.abspath(__file__))
 print(path)
 
 class starting:
-    def __init__(self,username,password):
+    def __init__(self,username,password,path):
         #ID AND PASSWORD
         self.username = username
         self.password = password
-
+        self.path = path
         #APPLY OPTION TO WEBDRIVER
-        self.driver = webdriver.Chrome(executable_path=str(path.parent) + "\\chromedriver.exe")
+        self.driver = webdriver.Chrome(str(self.path) + "\\chromedriver.exe")
         self.driver.maximize_window()
 
     #OPEN IG LOGIN PAGE
