@@ -1,0 +1,146 @@
+#:import utils kivy.utils
+#:import Factory kivy.factory.Factory
+
+<LoginScreen>:
+    name: "_login_screen_"
+    canvas:
+        Color:
+            rgb:
+                utils.get_color_from_hex("#8c66ff")
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+    GridLayout:
+        size_hint: .6,.1
+        pos_hint: {"top":.5,"right":.8}
+        cols:2
+
+        Button:
+            background_color: utils.get_color_from_hex("#FF3300")
+            text:
+                "Login"
+            on_press: root.login()
+        
+        Button:
+            background_color: utils.get_color_from_hex("#FF3300")
+            text:
+                "Quit"
+            on_press: root.quit()
+
+    GridLayout:
+        size_hint: .8,.1
+        pos_hint: {"top":.7,"right":.83}
+        rows: 2
+        cols: 2
+        Label:
+            text:
+                "Username:"
+        TextInput:
+            id: ussername
+            multiline: False
+
+        Label:
+            text:
+                "Password"
+            
+        TextInput:
+            id: passsword
+            multiline: False
+            password: True
+
+<MainScreen>:
+    name: "_login_screen_"
+    canvas:
+        Color:
+            rgb:
+                utils.get_color_from_hex("#8c66ff")
+        Rectangle:
+            size: self.size
+            pos: self.pos
+    name: "_main_screen_"
+    GridLayout:
+        size_hint: .3,.3
+        pos_hint: {"top":.7,"right":.95}
+        rows: 4
+        
+        Button:
+            background_color: utils.get_color_from_hex("#FF3300")
+            text:
+                "Follow From Recommended"
+            on_press: root.recommended_follow()
+
+        Button:
+            background_color: utils.get_color_from_hex("#FF3300")
+            text:
+                "Clean Unfollowers"
+            on_press: root.clean_unfollowers()
+
+        Button:
+            background_color: utils.get_color_from_hex("#FF3300")
+            text:
+                "ChoosenFollow"
+            on_press: root.popup_start()
+
+        Button:
+            background_color: utils.get_color_from_hex("#FF3300")
+            text:
+                "Quit"
+            on_press: root.quit()
+
+    GridLayout:
+        size_hint: .3,.3
+        pos_hint: {"top":.7,"right":.5}
+        rows: 4
+        Label:
+            text:
+                "This button goes to Recommended page and follow people from there"
+
+        Label:
+            text:
+                "This button finds who not following you back and unfollowing them"
+
+        Label:
+            text:
+                "This button follows people from hashtag that you enter"
+        
+        Label:
+            text:
+                "You really read what Quit button doing is ?? Quit the app!"
+
+<PopupScreen>:
+    name: "_login_screen_"
+    canvas:
+        Color:
+            rgb:
+                utils.get_color_from_hex("#8c66ff")
+        Rectangle:
+            size: self.size
+            pos: self.pos
+    name: "_popup_screen_"
+    GridLayout:
+        size_hint: .75,.1
+        pos_hint: {"top":.7,"right":.8}
+        cols: 2
+        Label:
+            text:
+                "Enter the hashtag please:"
+        TextInput:
+            id: hashtag
+            multiline: False
+
+    GridLayout:
+        cols:2
+        size_hint: .5,.1
+        pos_hint: {"top":.5,"right":.8}
+        Button:
+            background_color: utils.get_color_from_hex("#FF3300")
+            text: 
+                "Ok"
+            on_press: root.get_hashtag()
+        
+        Button:
+            background_color: utils.get_color_from_hex("#FF3300")
+            text:
+                "Cancel"
+            on_press: root.cancel()
